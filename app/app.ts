@@ -1,11 +1,12 @@
-import {Component} from '@angular/core';
+import {Component, PLATFORM_DIRECTIVES, provide} from '@angular/core';
 import {Platform, ionicBootstrap} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {HomePage} from './pages/home/home';
+import {HeaderContent} from './components/header-content/header-content';
 
 
 @Component({
-  template: '<ion-nav [root]="rootPage"></ion-nav>'
+  templateUrl: 'build/app.html'
 })
 export class MyApp {
   rootPage: any = HomePage;
@@ -19,4 +20,6 @@ export class MyApp {
   }
 }
 
-ionicBootstrap(MyApp);
+ionicBootstrap(MyApp, [
+  provide(PLATFORM_DIRECTIVES, {useValue: HeaderContent, multi: true})
+]);

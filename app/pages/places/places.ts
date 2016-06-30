@@ -11,7 +11,7 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'build/pages/places/places.html',
 })
 export class PlacesPage {
-
+  
   constructor(private nav: NavController) {
 
   }
