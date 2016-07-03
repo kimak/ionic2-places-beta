@@ -22,4 +22,11 @@ export class MyApp {
 
 ionicBootstrap(MyApp, [
   provide(PLATFORM_DIRECTIVES, {useValue: HeaderContent, multi: true})
-]);
+],{
+    mode: 'md',
+    platforms: {
+     ios: {
+       tabbarPlacement: 'top',
+     }
+   }
+});
