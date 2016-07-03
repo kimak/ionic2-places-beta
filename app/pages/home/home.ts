@@ -1,16 +1,16 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {TabsPage} from '../../pages/tabs/tabs';
+import {LoginPage} from '../../pages/login/login';
 
 @Component({
-  templateUrl: 'build/pages/home/home.html'
+  templateUrl: 'build/pages/home/home.html',
 })
 export class HomePage {
-  constructor(private nav: NavController) {
+  constructor(public nav: NavController) {
 
   }
 
-  goTabs(){
-    this.nav.push(TabsPage)
+  goLogin(){
+    this.nav.push(LoginPage)
   }
 }
