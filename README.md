@@ -14,3 +14,7 @@ $ ionic platform add ios
 $ ionic build ios
 $ ionic emulate ios
 ```
+
+### Slides:
+
+DAY 1 - [pdf](slides/ionic-day-1.pdf)
