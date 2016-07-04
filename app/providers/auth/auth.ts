@@ -18,7 +18,7 @@ export class Auth {
   contentHeader: Headers = new Headers({"Content-Type": "application/json"});
   jwtHelper: JwtHelper = new JwtHelper();
   local: Storage = new Storage(LocalStorage);
-  user: string;
+  user: any;
   error: string;
 
   constructor(private http: Http, private endpoints: Endpoints) {
@@ -52,6 +52,11 @@ export class Auth {
         this.authSuccess(data.id_token)
         return data;
       })
+  }
+
+  logout() {
+    this.local.remove('id_token');
+    this.user = null;
   }
 
 
