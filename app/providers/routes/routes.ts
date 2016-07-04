@@ -27,7 +27,7 @@ export class Routes {
   }
 
   getRootPage(){
-    let root =this.getPage(this.HOME)
+    let root = this.getPage(this.HOME)
     return root;
   }
 

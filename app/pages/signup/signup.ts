@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, ViewController } from 'ionic-angular';
+import {Auth} from '../../providers/auth/auth';
+import {Routes} from '../../providers/routes/routes';
 
 /*
   Generated class for the SignupPage page.
@@ -12,8 +14,30 @@ import { NavController, ViewController } from 'ionic-angular';
 })
 export class SignupPage {
 
-  constructor(private nav: NavController, public viewCtrl: ViewController) {
+  email:string;
+  password:string;
+  error:string;
 
+  static get parameters() {
+        return [[ViewController],[Auth],[NavController], [Routes]];
+  }
+  constructor(public viewCtrl: ViewController, private auth:Auth, private nav: NavController, private routes:Routes) {
+  }
+
+  signup(){
+    this.auth.signup({email:this.email,password:this.password })
+      .then((success)=>{
+
+        this.goTabs();
+
+      },(error)=>{
+        this.error = error._body;
+      })
+
+  }
+
+  goTabs(){
+      this.nav.push(this.routes.getPage(this.routes.TABS));
   }
 
   close(){

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, Modal } from 'ionic-angular';
-import {Routes} from '../../providers/routes/routes'
+import {Routes} from '../../providers/routes/routes';
 /*
   Generated class for the LoginPage page.
 
