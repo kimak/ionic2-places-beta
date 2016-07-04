@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Modal } from 'ionic-angular';
 import {Routes} from '../../providers/routes/routes'
 /*
   Generated class for the LoginPage page.
@@ -22,6 +22,11 @@ export class LoginPage {
 
   goTabs(){
       this.nav.push(this.routes.getPage(this.routes.TABS))
+  }
+
+  openSignup(){
+    let modal = Modal.create(this.routes.getPage(this.routes.SIGNUP));
+    this.nav.present(modal);
   }
 
 }

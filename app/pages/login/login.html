@@ -9,12 +9,12 @@
   <ion-navbar>
     <ion-title>login</ion-title>
   </ion-navbar>
-  
+
 </ion-header>
 
 
 <ion-content padding>
-  <ion-list>
+  <ion-list class="login_list">
     <ion-item>
       <ion-label fixed>Username</ion-label>
       <ion-input type="text" value=""></ion-input>
@@ -24,7 +24,7 @@
       <ion-label fixed>Password</ion-label>
       <ion-input type="password"></ion-input>
     </ion-item>
-    <button full (click)="goTabs()">Go Tabs</button>
-
+      <button full (click)="goTabs()">Sign In</button>
+      <button item-center outline (click)="openSignup()">Sign up</button>
   </ion-list>
 </ion-content>
