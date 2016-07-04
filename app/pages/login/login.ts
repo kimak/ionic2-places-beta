@@ -1,6 +1,6 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {TabsPage} from '../../pages/tabs/tabs';
+import {Routes} from '../../providers/routes/routes'
 /*
   Generated class for the LoginPage page.
 
@@ -12,12 +12,16 @@ import {TabsPage} from '../../pages/tabs/tabs';
 })
 export class LoginPage {
 
-  constructor(private nav: NavController) {
+  /** Not normally mandatory but create bugs if ommited. **/
+  static get parameters() {
+        return [[NavController], [Routes]];
+  }
 
+  constructor(private nav: NavController, private routes:Routes) {
   }
 
   goTabs(){
-    this.nav.push(TabsPage)
+      this.nav.push(this.routes.getPage(this.routes.TABS))
   }
 
 }
