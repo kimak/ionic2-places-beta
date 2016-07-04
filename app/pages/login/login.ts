@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, Modal } from 'ionic-angular';
 import {Routes} from '../../providers/routes/routes';
+import {Auth} from '../../providers/auth/auth';
 /*
   Generated class for the LoginPage page.
 
@@ -12,12 +13,27 @@ import {Routes} from '../../providers/routes/routes';
 })
 export class LoginPage {
 
+  email:string;
+  password:string;
+  error:string;
+
   /** Not normally mandatory but create bugs if ommited. **/
   static get parameters() {
-        return [[NavController], [Routes]];
+        return [[NavController], [Routes], [Auth]];
+  }
+  constructor(private nav: NavController, private routes:Routes, private auth:Auth) {
   }
 
-  constructor(private nav: NavController, private routes:Routes) {
+  login(){
+    this.auth.login({email:this.email,password:this.password })
+      .then((success)=>{
+
+        this.goTabs();
+
+      },(error)=>{
+        this.error = error._body;
+      })
+
   }
 
   goTabs(){

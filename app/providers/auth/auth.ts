@@ -32,7 +32,14 @@ export class Auth {
   }
 
   login(credentials) {
+    let observable = this.http.post(this.endpoints.getLogin(),
+      JSON.stringify(credentials),{ headers: this.contentHeader })
+      .map(res => { return res.json()})
 
+      return observable.toPromise().then((data)=>{
+        this.authSuccess(data.id_token)
+        return data;
+      })
   }
 
   signup(credentials) {
