@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import {Maps} from '../../components/maps/maps';
 
 /*
   Generated class for the AroundPage page.
@@ -9,11 +9,17 @@ import { NavController } from 'ionic-angular';
 */
 @Component({
   templateUrl: 'build/pages/around/around.html',
+  directives: [Maps],
 })
 export class AroundPage {
 
-  constructor(private nav: NavController) {
+  @ViewChild(Maps)
+  private map: Maps;
 
+  constructor() {
   }
 
+  ionViewDidEnter(){
+    this.map.init(46.2043907, 6.143157699999961)
+  }
 }
