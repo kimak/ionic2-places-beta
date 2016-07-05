@@ -10,6 +10,7 @@ import { Injectable } from '@angular/core';
 export class Endpoints {
 
   API_PATH: string = "http://ionic-places-jwt.herokuapp.com"
+  //API_PATH: string = "http://localhost:3001"
 
   getLogin(){
     return this.API_PATH + "/sessions/create"
@@ -19,5 +20,8 @@ export class Endpoints {
     return this.API_PATH + "/users"
   }
 
+  getPlaces(){
+    return this.API_PATH + "/places"
+  }
 
 }

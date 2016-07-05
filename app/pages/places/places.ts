@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {Places} from '../../providers/places/places'
 
 /*
   Generated class for the PlacesPage page.
@@ -11,9 +12,11 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'build/pages/places/places.html',
 })
 export class PlacesPage {
-  
-  constructor(private nav: NavController) {
-
+  items:any = []
+  constructor(private nav: NavController, private places:Places) {
+      this.places.load().then((data)=>{
+        this.items = data;
+      })
   }
 
 }

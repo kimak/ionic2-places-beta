@@ -6,12 +6,14 @@ import {HeaderContent} from './components/header-content/header-content';
 import {Routes} from './providers/routes/routes'
 import {Endpoints} from './providers/endpoints/endpoints'
 import {Auth} from './providers/auth/auth'
+import {Places} from './providers/places/places'
 
 import {AuthHttp, AuthConfig} from 'angular2-jwt';
 import {Http} from '@angular/http';
 
 @Component({
   templateUrl: 'build/app.html',
+  providers: [Places],
 })
 export class MyApp {
   rootPage: any;
