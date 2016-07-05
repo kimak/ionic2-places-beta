@@ -21,7 +21,7 @@ export class Endpoints {
   }
 
   getPlaces(){
-    return this.API_PATH + "/places"
+    return this.API_PATH + "/user/places"
   }
 
 }
