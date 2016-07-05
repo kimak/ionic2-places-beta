@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 /*
   Generated class for the ButtonMenu directive.
 
@@ -12,11 +12,19 @@ import { Component, Input } from '@angular/core';
 export class HeaderContent {
 
   @Input() title: string;
+  @Input() backEnabled: Boolean;
+  showBack:Boolean;
+
+  @Output() onBack: EventEmitter<any> = new EventEmitter();
 
   constructor() {
   }
 
   ngOnInit() {
-    //console.log('Init',this.title);
+      this.showBack = this.backEnabled;
+ }
+
+ onClickBack(){
+    this.onBack.emit({})
  }
 }
