@@ -4,6 +4,7 @@ import {LoginPage} from '../../pages/login/login';
 import {SignupPage} from '../../pages/signup/signup';
 import {TabsPage} from '../../pages/tabs/tabs';
 import {AddPage} from '../../pages/add/add';
+import {PlacePage} from '../../pages/place/place';
 import {Auth} from '../../providers/auth/auth'
 
 @Injectable()
@@ -14,12 +15,14 @@ export class Routes {
   LOGIN:string="login";
   SIGNUP:string="signup";
   TABS:string="tabs";
+  PLACE:string="place";
 
   constructor(private auth:Auth){
     this.routes[this.HOME]=HomePage;
     this.routes[this.LOGIN]=LoginPage;
     this.routes[this.SIGNUP]=SignupPage;
     this.routes[this.TABS]=TabsPage;
+    this.routes[this.PLACE]=PlacePage;
   }
 
   getPage(id){
