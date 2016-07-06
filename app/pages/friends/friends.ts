@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {Contacts} from 'ionic-native';
 import {SortAsc} from '../../pipes/sortAsc';
+import {GroupBy} from '../../pipes/groupBy';
 
 
 /*
@@ -12,7 +13,7 @@ import {SortAsc} from '../../pipes/sortAsc';
 */
 @Component({
   templateUrl: 'build/pages/friends/friends.html',
-  pipes:[SortAsc],
+  pipes:[SortAsc, GroupBy],
 })
 export class FriendsPage {
 

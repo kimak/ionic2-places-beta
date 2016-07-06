@@ -10,10 +10,11 @@
 
 
 <ion-content padding>
-  <ion-list>
-    <ion-item  *ngFor="let item of contactsfound | sortAsc:'name'">
-      <h2>{{item.name}}</h2>
-      <p>{{item.phone}}</p>
-    </ion-item>
-  </ion-list>
+     <ion-item-group light *ngFor="let group of contactsfound | sortAsc:'name' | groupBy:'name'">
+       <ion-item-divider>{{group.value}}</ion-item-divider>
+        <ion-item  *ngFor="let item of group.list">
+          <h2>{{item.name}}</h2>
+          <p>{{item.phone}}</p>
+        </ion-item>
+    </ion-item-group>
 </ion-content>
