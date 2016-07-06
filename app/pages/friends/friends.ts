@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {Contacts} from 'ionic-native';
 
+
 /*
   Generated class for the FriendsPage page.
 
@@ -26,7 +27,6 @@ export class FriendsPage {
             this.contactsfound.push({name: c.name.givenName, phone: c.phoneNumbers[0].value}); // grab only the properties you need avoiding birthday (ios bug on date formating) http://stackoverflow.com/questions/36798316/ionic-cordova-contacts-plugin-returns-invalid-date-on-ios-after-upgrade-to-ionic
           }
         });
-        console.log(this.contactsfound)
       },(error)=>{
           alert("error "+error)
       }).catch((error)=>{
