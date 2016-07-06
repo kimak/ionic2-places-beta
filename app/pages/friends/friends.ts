@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {Contacts} from 'ionic-native';
+import {SortAsc} from '../../pipes/sortAsc';
 
 
 /*
@@ -11,6 +12,7 @@ import {Contacts} from 'ionic-native';
 */
 @Component({
   templateUrl: 'build/pages/friends/friends.html',
+  pipes:[SortAsc],
 })
 export class FriendsPage {
 
@@ -20,7 +22,7 @@ export class FriendsPage {
 
 
       this.contactsfound = [];
-      /* Uncomment this mock data to avoid device building on test
+      /*//Uncomment this mock data to avoid device building on test
 
       let contacts:any = [{name:"Bob"},{name:"Bobby"},{name:"Charles"},{name:"Erik"},{name:"Amery"},{name:"Alhan"}];
       setTimeout(()=>{
