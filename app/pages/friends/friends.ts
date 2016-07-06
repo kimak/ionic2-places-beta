@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {Contacts} from 'ionic-native';
-import {Platform} from 'ionic-angular';
 
 /*
   Generated class for the FriendsPage page.
@@ -16,9 +15,8 @@ export class FriendsPage {
 
   contactsfound:any;
 
-  constructor(private platform: Platform) {
+  constructor() {
 
-    this.platform.ready().then(() => {
 
       this.contactsfound = [];
 
@@ -34,7 +32,6 @@ export class FriendsPage {
       }).catch((error)=>{
         alert("catch"+error)
       })
-    })
-  }
+    }
 
 }
