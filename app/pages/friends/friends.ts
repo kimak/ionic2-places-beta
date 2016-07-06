@@ -20,6 +20,17 @@ export class FriendsPage {
 
 
       this.contactsfound = [];
+      /* Uncomment this mock data to avoid device building on test
+
+      let contacts:any = [{name:"Bob"},{name:"Bobby"},{name:"Charles"},{name:"Erik"},{name:"Amery"},{name:"Alhan"}];
+      setTimeout(()=>{
+        contacts.forEach( (c)=> {
+          if (c.name) {
+            this.contactsfound.push({name: c.name});
+          }
+        });
+      },1000)*/
+
 
       Contacts.find(['*']).then((contacts) => {
         contacts.forEach( (c)=> {
